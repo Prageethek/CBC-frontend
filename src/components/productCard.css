@@ -1,0 +1,15 @@
+.productCard {
+    background-color: rgb(225, 237, 248);
+    width: 150px;
+    height: 300px;
+}
+
+.productCard img {
+    width: 100%;
+    height: 50%;
+}
+
+.priceSection{
+    display: flex;
+    gap:30px;
+}
