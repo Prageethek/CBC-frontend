@@ -4,11 +4,13 @@ import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
 import Header from "./components/header";
 import AdminPage from "./pages/adminPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
       <div>
+        <Toaster position="top-right"/>
         {/* <Header /> */}
         <Routes path="/">
           <Route path="/" element={<Home />} />
