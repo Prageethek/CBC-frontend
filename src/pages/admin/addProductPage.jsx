@@ -2,7 +2,7 @@ import { useState } from "react";
 import mediaUpload from "../../utils/mediaUpload";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AddProductPage() {
   const [productId, setProductId] = useState("");
@@ -13,7 +13,8 @@ export default function AddProductPage() {
   const [labelledPrice, setLabelledPrice] = useState(0);
   const [price, setPrice] = useState(0);
   const [stock, setStock] = useState(0);
-
+  
+  const navigate = useNavigate()
   let imageUrls;
   async function addProduct() {
     if (images.length <= 0) {
@@ -69,6 +70,8 @@ export default function AddProductPage() {
         },
       );
       toast.success(res.data.message);
+      navigate('/admin/products')
+
     } catch (e) {
       toast.error("Failed to add product");
       console.log("Message =", e.response?.data?.message);
